@@ -3,6 +3,7 @@
 ## **Overview**
 
 This project performs sentiment analysis, hashtag extraction, and activity trend analysis on an **enlarged Sentiment140 dataset** using **PySpark**. It processes the data and generates visualizations, while storing outputs on **Google Cloud Storage (GCS)**.
+
 The main objective is to demonstrate how a cloud-based infrastructure can efficiently handle large datasets and generate actionable insights.
 
 ### **Why Big Data and Cloud?**
@@ -31,9 +32,9 @@ The extended Sentiment140 dataset contains information about tweets categorized 
   - `sentiment`: Sentiment label (positive, neutral, or negative).
   - `created_at`: Date and time the tweet was created.
   - `text`: The tweet's content.
-Note: The **Enlarged Sentiment140 Dataset** is too large to upload to GitHub (over 1 GB). It is stored in Google Cloud Storage and can be downloaded from this link:  
-
-[**Download the Enlarged Sentiment140 Dataset**](https://console.cloud.google.com/storage/browser/macro-nuance-210216/enlarged_sentiment140.csv)
+>**Note**: The **Enlarged Sentiment140 Dataset** is too large to upload to GitHub (over 1 GB).
+> It is stored in Google Cloud Storage and can be downloaded from this link:  
+>[**Download the Enlarged Sentiment140 Dataset**](https://console.cloud.google.com/storage/browser/macro-nuance-210216/enlarged_sentiment140.csv)
 
 ---
 
@@ -135,16 +136,16 @@ Optimized PySpark transformations with efficient chaining.
 ## **Conclusions**
 This project demonstrates how to handle large-scale data in the cloud using PySpark and Google Cloud.
 The visualizations provide key insights into user behavior on Twitter.
--Lessons learned:
+
+**Lessons learned**:
 GCS integration simplifies large-scale data management.
 PySpark is effective for distributed analysis but requires proper tuning for optimal performance.
 
--Future work:
-
-Implement real-time analysis using Spark Streaming.
+**Future work**:
+ Implement real-time analysis using Spark Streaming.
 Explore additional datasets for comparative analysis.
 
-### References
+### **References**
 - [Sentiment140 Dataset](http://help.sentiment140.com/for-students/)  
   Official page for the Sentiment140 dataset, including details on how to use it.
 
