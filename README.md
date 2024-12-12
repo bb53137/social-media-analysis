@@ -40,9 +40,6 @@ The project is organized as follows:
 
 social-media-analysis/
 │
-├── data/                            # Placeholder for the input dataset
-│   
-│
 ├── output/
 │   ├── activity_by_hour/            # Output directory for tweet activity trends
 │   │   ├── output_proyect_activity_by_hour.csv_SUCCESS
