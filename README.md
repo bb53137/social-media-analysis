@@ -128,6 +128,32 @@ Here are the links to the visualization images:
 - [Sentiment Distribution Visualization](https://console.cloud.google.com/storage/browser/macro-nuance-210216/output_proyect/sentiment_distribution.png)
 - [Tweet Activity Visualization](https://console.cloud.google.com/storage/browser/macro-nuance-210216/output_proyect/activity_by_hour.png)
 
+## **Code Explanation**
+
+The main script `social_media_analysis.py` performs the following steps:
+
+1. **Data Loading**:
+   - Reads the dataset from Google Cloud Storage into a Spark DataFrame.
+
+2. **Hashtag Analysis**:
+   - Extracts hashtags using regular expressions.
+   - Groups hashtags and counts their occurrences.
+   - Saves the top 10 most frequent hashtags to GCS.
+
+3. **Sentiment Distribution**:
+   - Groups tweets by sentiment (positive, neutral, negative) and calculates counts.
+   - Saves the sentiment distribution to GCS.
+
+4. **Hourly Activity Trends**:
+   - Extracts the hour from the `created_at` column.
+   - Groups tweets by hour and calculates tweet counts.
+   - Saves hourly activity trends to GCS.
+
+5. **Visualizations**:
+   - Generates visualizations for hashtags, sentiment distribution, and hourly trends using Matplotlib.
+   - Uploads the images to GCS for easy access.
+
+
 ## **Advanced Features**
 Utilized regular expressions in PySpark to extract hashtags.
 Generated visualizations using Matplotlib and automatically uploaded them to GCS.
