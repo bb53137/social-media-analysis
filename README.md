@@ -149,10 +149,5 @@ Explore additional datasets for comparative analysis.
 
 - [Google Cloud SDK Documentation](https://cloud.google.com/sdk/docs/)  
   Official guide for Google Cloud SDK, including installation, configuration, and usage instructions.
-Sentiment140
-Página oficial de Sentiment140, que incluye información sobre el dataset y cómo utilizarlo.
-PySpark Documentation
-Documentación oficial de PySpark, que describe todas las funcionalidades y APIs disponibles.
-Google Cloud SDK
-Guía oficial de Google Cloud SDK, incluyendo cómo instalarlo, configurarlo y usarlo para interactuar con Google Cloud.
+
    
