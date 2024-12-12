@@ -1,13 +1,17 @@
-# Sentiment140 Analysis with PySpark and Google Cloud
+# **Sentiment140 Analysis with PySpark and Google Cloud**
 
-## Overview
+## **Overview**
 
 This project performs sentiment analysis, hashtag extraction, and activity trend analysis on an **enlarged Sentiment140 dataset** using **PySpark**. It processes the data and generates visualizations, while storing outputs on **Google Cloud Storage (GCS)**.
 The main objective is to demonstrate how a cloud-based infrastructure can efficiently handle large datasets and generate actionable insights.
 
+### **Why Big Data and Cloud?**
+- **Big Data**: The dataset exceeds 1 GB, making it impractical for local processing. PySpark allows parallel processing of large datasets efficiently.
+- **Cloud**: Google Cloud provides scalable infrastructure and storage for managing and analyzing data at scale.
+  
 ---
 
-## Key Features
+## **Key Features**
 
 - **Hashtag Analysis**: Finds the top 10 most frequent hashtags.
 - **Sentiment Distribution**: Calculates counts for positive, neutral, and negative sentiments.
@@ -17,16 +21,16 @@ The main objective is to demonstrate how a cloud-based infrastructure can effici
 
 ---
 
-## Dataset
+## **Dataset**
 The extended Sentiment140 dataset contains information about tweets categorized by sentiment (positive, neutral, negative).
 
-Source: Sentiment140
-Size: Over 1 GB.
-Format: CSV.
-Relevant Fields:
--sentiment: Sentiment label.
--created_at: Date and time the tweet was created.
--text: Tweet content.
+-**Source**: Sentiment140
+- **Size**: Over 1 GB.
+- **Format**: CSV.
+- **Relevant Fields**:
+  - `sentiment`: Sentiment label (positive, neutral, or negative).
+  - `created_at`: Date and time the tweet was created.
+  - `text`: The tweet's content.
 Note: The **Enlarged Sentiment140 Dataset** is too large to upload to GitHub (over 1 GB). It is stored in Google Cloud Storage and can be downloaded from this link:  
 
 [**Download the Enlarged Sentiment140 Dataset**](https://console.cloud.google.com/storage/browser/macro-nuance-210216/enlarged_sentiment140.csv)
@@ -34,7 +38,7 @@ Note: The **Enlarged Sentiment140 Dataset** is too large to upload to GitHub (ov
 ---
 
 
-## Project Structure
+## **Project Structure**
 
 The project is organized as follows:
 
@@ -57,7 +61,7 @@ social-media-analysis/
 
 
 
-## Setup Instructions
+## **Setup Instructions**
 
 ### Prerequisites
 
@@ -93,7 +97,7 @@ social-media-analysis/
    ```bash
    python social_media_analysis.py
 
-### Outputs
+### **Outputs**
 
 The script generates the following outputs:
 
@@ -115,7 +119,7 @@ You can download the output files directly from Google Cloud Storage:
 - [Activity by Hour CSV](https://console.cloud.google.com/storage/browser/macro-nuance-210216/output_proyect/activity_by_hour.csv/)
 
   
-## Visualizations
+## **Visualizations**
 
 Here are the links to the visualization images:
 
@@ -123,12 +127,12 @@ Here are the links to the visualization images:
 - [Sentiment Distribution Visualization](https://console.cloud.google.com/storage/browser/macro-nuance-210216/output_proyect/sentiment_distribution.png)
 - [Tweet Activity Visualization](https://console.cloud.google.com/storage/browser/macro-nuance-210216/output_proyect/activity_by_hour.png)
 
-## Advanced Features
+## **Advanced Features**
 Utilized regular expressions in PySpark to extract hashtags.
 Generated visualizations using Matplotlib and automatically uploaded them to GCS.
 Optimized PySpark transformations with efficient chaining.
 
-## Conclusions
+## **Conclusions**
 This project demonstrates how to handle large-scale data in the cloud using PySpark and Google Cloud.
 The visualizations provide key insights into user behavior on Twitter.
 -Lessons learned:
