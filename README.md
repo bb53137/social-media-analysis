@@ -111,6 +111,44 @@ The script generates the following outputs:
    - **Top 10 Hashtags**
    - **Sentiment Distribution**
    - **Tweet Activity Over Time**
+  
+
+
+## **Performance Evaluation**
+
+### **Configurations Tested**
+
+| Configuration           | Dataset Size | Nodes | vCPUs per Node | Execution Time |
+|--------------------------|--------------|-------|----------------|----------------|
+| Local Machine            | 1 GB         | 1     | 4              | ~15 minutes    |
+| Google Cloud (Small)     | 1 GB         | 1     | 4              | ~5 minutes     |
+| Google Cloud (Medium)    | 1 GB         | 3     | 4              | ~2 minutes     |
+
+---
+
+### **Observations**
+
+1. **Scalability**: Adding nodes improves performance significantly.
+2. **Cost Efficiency**: A small cluster is sufficient for moderate datasets, while larger clusters are better for Big Data.
+
+---
+
+### **How to Reproduce Performance Evaluation**
+
+#### Local Environment:
+1. Run the script on your local machine.
+2. Use the existing `time` module implementation in your script to measure execution time.
+
+#### Google Cloud Dataproc:
+1. Create a Dataproc cluster.
+2. Upload the dataset to Google Cloud Storage.
+3. Submit the PySpark job using:
+   ```bash
+   gcloud dataproc jobs submit pyspark gs://<bucket-name>/social_media_analysis.py \
+    --cluster=<cluster-name> \
+    --region=<region>
+
+
 ## Access Output Files
 
 You can download the output files directly from Google Cloud Storage:
