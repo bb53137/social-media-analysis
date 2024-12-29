@@ -1,6 +1,11 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, lower, regexp_extract, count, desc, date_format
 import matplotlib.pyplot as plt
+import time  
+from datetime import datetime  
+
+start_time = time.time()
+print(f"Script started at: {datetime.now()}") 
 
 
 spark = SparkSession.builder.appName("Sentiment140CloudAnalysis").getOrCreate()
@@ -8,6 +13,7 @@ spark = SparkSession.builder.appName("Sentiment140CloudAnalysis").getOrCreate()
 data_path = "gs://macro-nuance-210216/enlarged_sentiment140.csv"  
 print("Loading Sentiment140 dataset from Google Cloud Storage...")
 df = spark.read.csv(data_path, header=False, inferSchema=True)
+print(f"Dataset loaded at: {datetime.now()}")
 
 print("Preview of dataset:")
 df.show(5)
@@ -42,7 +48,7 @@ print("Saving results to Google Cloud Storage...")
 top_hashtags.write.mode("overwrite").csv(output_dir + "top_hashtags.csv", header=True)
 sentiment_count.write.mode("overwrite").csv(output_dir + "sentiment_count.csv", header=True)
 activity_by_hour.write.mode("overwrite").csv(output_dir + "activity_by_hour.csv", header=True)
-
+print(f"Results saved at: {datetime.now()}")
 print("Generating visualizations...")
 
 top_hashtags_pd = top_hashtags.toPandas()
@@ -81,3 +87,7 @@ os.system("gsutil cp /tmp/sentiment_distribution.png gs://macro-nuance-210216/ou
 os.system("gsutil cp /tmp/activity_by_hour.png gs://macro-nuance-210216/output/")
 
 print("Visualizations uploaded to Google Cloud Storage.")
+
+end_time = time.time()
+print(f"Script ended at: {datetime.now()}")  
+print(f"Total Execution Time: {end_time - start_time} seconds") 
